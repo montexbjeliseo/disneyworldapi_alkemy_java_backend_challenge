@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.mtx.disneyworld.DisneyworldApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 57.933 s - in com.mtx.disneyworld.DisneyworldApplicationTests
