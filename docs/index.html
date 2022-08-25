@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/general.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Como usar y que esperar de Disneyworld API</h1>
+        <div class="block index">
+            <h2>Tabla de contenidos</h2>
+            <ul>
+                <li><a href="#registro">Registro</a></li>
+                <li><a href="#ingreso">Ingreso</a></li>
+                <li><a href="#listar">Lista de personajes, peliculas y g&eacute;neros</a></li>
+                <li><a href="#crear">Creacion de personajes, peliculas y g&eacute;neros</a></li>
+                <li><a href="#actualizar">Actualizacion de personajes, peliculas y g&eacute;neros</a></li>
+                <li><a href="#agregar">Agregar de personaje a una pelicula y pelicula a un g&eacute;nero</a></li>
+                <li><a href="#eliminar">Eliminacion de personajes, peliculas y g&eacute;neros</a></li>
+            </ul>
+        </div>
+        <div class="block" name="registro">
+            <a name="registro"></a>
+            <h2>Registro</h2>
+            <p>El registro se lleva a cabo con nombre de usuario, email y contraseña.
+                Mediante el endpoint <span class="endpoint">/auth/register</span> y el m&eacute;todo <span
+                    class="method">POST</span>.</p>
+
+            <h3>Ejemplo:</h3>
+            <p>
+                <img src="img/register_request_example.PNG" alt="">
+                <br>
+                Se registrara el usuario en base de datos y se devolverá un token para ser usado inmediatamente, que
+                durará 8
+                horas. Adema&aacute;s se le notificar&aacute; por email.
+            </p>
+            <h4>Ejemplo del token</h4>
+            <p>
+                <img src="img/register_token_example.PNG" alt="">
+            </p>
+        </div>
+        <div class="block">
+            <a name="ingreso"></a>
+            <h2>Ingreso</h2>
+            <p>El ingreso se lleva a cabo con email y contraseña.
+                Mediante el endpoint <span class="endpoint">/auth/login</span> y el m&eacute;todo <span
+                    class="method">POST</span>.</p>
+
+            <h3>Ejemplo:</h3>
+            <p>
+                <img src="img/login_request_example.PNG" alt="">
+                <br>
+                Se devolverá un token para ser usado inmediatamente, que
+                durará 8
+                horas.
+            </p>
+            <h4>Ejemplo del token</h4>
+            <p>
+                <img src="img/register_token_example.PNG" alt="">
+            </p>
+        </div>
+        <div class="block">
+            <a name="listar"></a>
+            <h2>Listado de personajes, peliculas y generos</h2>
+            <p>Para esto hay que tener un token.
+                Mediante el endpoint <span class="endpoint">/characters</span> y el m&eacute;todo <span
+                    class="method">GET</span>.</p>
+
+            <h3>Ejemplo:</h3>
+            <p>
+                <img src="img/character_request_example.PNG" alt="">
+                <br>
+                Se devolverá una lista de personajes, que tendrá el nombre e imagen.
+            </p>
+            <h4></h4>
+            <p>
+                <img src="img/character_list_example.PNG" alt="">
+            </p>
+            <p><h4>Filtros:</h3>
+                <ul style="list-style: none;">
+                    <li><b>age: </b>filtra por edad</li>
+                    <li><b>name: </b>filtra por nombre</li>
+                    <li><b>movie: </b>filtra por peliculas en las que participen</li>
+                    <li><b>detail: </b>regresa una lista con los personajes y todos sus detalles</li>
+                    <li><b>order: </b>ordena la lista, ejemplo: <span class="endpoint">/characters?order=asc|desc</span> o <span class="endpoint">/characters?order=desc|asc</span></li>
+                </ul>
+                <p>Todos los filtros pueden ser combinados y siempre a devolver un arreglo.</p>
+            </p>
+            <h4>Peliculas</h4>
+            <p>
+                Endpoint: <span class="endpoint">/movies</span> <span class="method">GET</span>
+            </p>
+            <h4>Generos</h4>
+            <p>
+                Endpoint: <span class="endpoint">/genres</span> <span class="method">GET</span>
+            </p>
+            
+        </div>
+        <div class="block">
+            <a name="crear"></a>
+            <h2>Creacion de personajes, peliculas y generos</h2>
+            <p>Para esto hay que tener un token.
+                Mediante el endpoint <span class="endpoint">/characters/create</span> y el m&eacute;todo <span
+                    class="method">POST</span>.</p>
+
+            <h3>Ejemplo:</h3>
+            <p>
+                <img src="img/character_create_exaple.PNG" alt="">
+                <br>
+                Se devolverá el personaje con todas sus propiedades.
+            </p>
+            <h4></h4>
+            <p>
+                <img src="img/character_create_resp.PNG" alt="">
+            </p>
+            <h4>Peliculas</h4>
+            <p>
+                Endpoint: <span class="endpoint">/movies/create</span> <span class="method">POST</span>
+                <p>Se debe proveer: title, image, rate, creationDate.
+                </p>
+            </p>
+            <h4>Generos</h4>
+            <p>
+                Endpoint: <span class="endpoint">/genres/create</span> <span class="method">POST</span>
+                <p>Se debe proveer: name, image</p>
+            </p>
+        </div>
+        <div class="block">
+            <a name="actualizar"></a>
+            <h2>Actualizar</h2>
+            <p>Se debe incluir obligatoriamente el ID y la propiedad que queremos actualizar con su respectivo valor,
+                Mediante el endpoint <span class="endpoint">/characters/update</span> y el m&eacute;todo <span
+                    class="method">PUT</span>.</p>
+
+            <h3>Ejemplo:</h3>
+            <p>
+                <img src="img/character_update_example.PNG" alt="">
+                <br>
+                Se devolverá el personaje con todas sus propiedades.
+            </p>
+            <p>
+                <img src="img/character_update_resp.PNG" alt="">
+            </p>
+            <h4>Peliculas</h4>
+            <p>
+                Endpoint: <span class="endpoint">/movies/update</span> <span class="method">PUT</span>
+            </p>
+            <h4>Generos</h4>
+            <p>
+                Endpoint: <span class="endpoint">/genres/update</span> <span class="method">PUT</span>
+            </p>
+        </div>
+        <div class="block">
+            <a name="agregar"></a>
+            <h2>Agregar</h2>
+            <p>Se debe incluir obligatoriamente el ID de la pelicula y del personaje
+                Mediante el endpoint <span class="endpoint">/movies/<span class="entity">{idMovie}</span>/characters/<span class="entity">{idCharacter}</span></span> y el m&eacute;todo <span
+                    class="method">POST</span>.</p>
+
+            <h3>Ejemplo:</h3>
+            <p>
+                <img src="img/add_to.PNG" alt="">
+                <br>
+                Se devolverá la pelicula con todas sus propiedades.
+            </p>
+            <h4>Peliculas</h4>
+            <p>
+                Endpoint: <span class="endpoint">/genres/<span class="entity">{idGenre}</span>/movies/<span class="entity">{idMovie}</span></span> <span class="method">POST</span>
+            </p>
+        </div>
+        <div class="block">
+            <a name="eliminar"></a>
+            <h2>Eliminacion</h2>
+            <p>Se debe incluir obligatoriamente el ID de la pelicula, personaje o genero
+                Mediante el endpoint:
+                <br>Personaje: <span class="endpoint">/characters/<span class="entity">{id}</span>/delete</span> y el m&eacute;todo <span
+                    class="method">DELETE</span>.</p>
+                    <br>Pelicula: <span class="endpoint">/movies/<span class="entity">{id}</span>/delete</span> y el m&eacute;todo <span
+                    class="method">DELETE</span>.</p>
+                    <br>Genreos: <span class="endpoint">/genres/<span class="entity">{id}</span>/delete</span> y el m&eacute;todo <span
+                    class="method">DELETE</span>.</p>
+            <h3>Ejemplo:</h3>
+            <p>
+                <img src="img/del_char.PNG" alt="">
+            </p>
+            <h4>Elimnar un personaje de una pelicula</h4>
+            <p>
+                Endpoint: <span class="endpoint">/movies<span class="entity">{idMovie}</span>/characters/<span class="entity">{idCharacter</span></span> <span class="method">DELETE</span>
+            </p>
+            <h4>Elimnar una pelicula de un genero</h4>
+            <p>
+                Endpoint: <span class="endpoint">/genres<span class="entity">{idGenre}</span>/movies/<span class="entity">{idMovie/span></span> <span class="method">DELETE</span>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
