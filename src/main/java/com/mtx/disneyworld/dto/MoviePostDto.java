@@ -1,6 +1,5 @@
 package com.mtx.disneyworld.dto;
 
-import java.util.Calendar;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,9 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class MovieDtoMin {
-
-    private String title;
+public class MoviePostDto {
     private String image;
-    private Calendar creationDate;
+    private String title;
 }

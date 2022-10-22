@@ -1,5 +1,0 @@
-# Created at 2022-08-24T16:24:07.041
-Boot Manifest-JAR contains absolute paths in classpath 'E:\Projects\SpringBoot\disneyworld\target\test-classes'
-Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
-'other' has different root
-
