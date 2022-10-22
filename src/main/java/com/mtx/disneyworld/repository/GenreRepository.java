@@ -9,7 +9,7 @@ import java.util.Optional;
 @Repository
 public interface GenreRepository extends JpaRepository<Genre, Long> {
 
-	Optional<Genre> findByName(String name);
+    Optional<Genre> findByName(String name);
 
     boolean existsByName(String name);
 }

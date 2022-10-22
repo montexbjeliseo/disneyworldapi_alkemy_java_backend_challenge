@@ -1,6 +1,6 @@
 package com.mtx.disneyworld.repository;
 
-import com.mtx.disneyworld.entity.User;
+import com.mtx.disneyworld.security.entity.User;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
