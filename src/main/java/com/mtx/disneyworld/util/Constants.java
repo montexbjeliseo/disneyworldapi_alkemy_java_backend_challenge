@@ -5,7 +5,9 @@ public class Constants {
     public static abstract class Roles {
 
         public static final String ADMIN = "ADMIN";
+        public static final String ADMIN_DESCRIPTION = "Can access all endpoint and modify any resource";
         public static final String USER = "USER";
+        public static final String USER_DESCRIPTION = "Can access all endpoint allowed for users and modify any owned resource";
         public static final String[] ALL = {ADMIN, USER};
     }
 
@@ -18,9 +20,11 @@ public class Constants {
         public static final String NEW = "/new";
 
         public static final String AUTH = "/auth";
-        public static final String AUTH_ALL = AUTH + "/**";
-        public static final String REGISTER = AUTH + "/register";
-        public static final String LOGIN = AUTH + "/login";
+        public static final String AUTH_ALL = AUTH + "**";
+        public static final String REGISTER = "/register";
+        public static final String LOGIN = "/login";
+        public static final String AUTH_REGISTER = AUTH + REGISTER;
+        public static final String AUTH_LOGIN = AUTH + LOGIN;
 
         public static final String CHARACTER = "/characters";
         public static final String CHARACTER_ID = CHARACTER + CHARACTERID;

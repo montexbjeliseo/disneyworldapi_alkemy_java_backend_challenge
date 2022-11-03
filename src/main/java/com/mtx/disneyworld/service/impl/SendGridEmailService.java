@@ -1,15 +1,15 @@
 package com.mtx.disneyworld.service.impl;
 
-import com.mtx.disneyworld.service.EmailService;
 import com.sendgrid.*;
 
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.mtx.disneyworld.service.IEmailService;
 
 @Service
-public class SendGridEmailService implements EmailService {
+public class SendGridEmailService implements IEmailService {
     
     @Autowired
     private SendGrid sendGridClient;

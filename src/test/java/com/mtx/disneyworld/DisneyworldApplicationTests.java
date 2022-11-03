@@ -26,19 +26,6 @@ public class DisneyworldApplicationTests {
 
     private static final Logger logger = LoggerFactory.getLogger(DisneyworldApplicationTests.class);
 
-
-    
-    public void crearUsuarioTest(){
-        User user = new User();
-        
-        user.setName("admin1");
-        user.setPassword(encoder.encode("1234"));
-        user.setEmail("secondmtx");
-        userRepo.save(user); 
-
-        assertTrue(userRepo.findByName(user.getName()).get().getPassword().equalsIgnoreCase("1234"));
-    }
-
     @Autowired
     String sendGridEmail;
 

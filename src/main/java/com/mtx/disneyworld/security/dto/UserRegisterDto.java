@@ -4,18 +4,17 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserRegisterDto implements Serializable {
-    @Getter @Setter private String name;
-    @Getter @Setter private String email;
-    @Getter @Setter private String password;
-    
-    public UserRegisterDto(){
 
-    }
-    public UserRegisterDto(String name, String email, String password){
-        this.name = name;
-        this.email = email;
-        this.password = password;
-    }
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String password;
 }

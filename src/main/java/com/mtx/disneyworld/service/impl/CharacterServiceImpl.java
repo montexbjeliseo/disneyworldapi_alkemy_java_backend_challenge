@@ -5,6 +5,7 @@ import com.mtx.disneyworld.dto.CharacterPostDto;
 import com.mtx.disneyworld.repository.CharacterRepository;
 import com.mtx.disneyworld.entity.Character;
 import com.mtx.disneyworld.mapper.CharacterMapper;
+import com.mtx.disneyworld.service.ICharacterService;
 import com.mtx.disneyworld.util.Constants.Params;
 import java.util.Arrays;
 import java.util.List;
@@ -17,7 +18,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
-public class CharacterServiceImpl {
+public class CharacterServiceImpl implements ICharacterService {
 
     @Autowired
     private CharacterRepository characterRepository;
@@ -99,7 +100,7 @@ public class CharacterServiceImpl {
         return characterMapper.toDto(character);
     }
 
-    public CharacterDto update(Long id, CharacterPostDto dto) throws Exception {
+    public CharacterDto update(Long id, CharacterPostDto dto) {
         if (!characterRepository.existsById(id)) {
             throw new RuntimeException("No existe!");
         }
