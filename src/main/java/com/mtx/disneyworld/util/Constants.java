@@ -1,5 +1,7 @@
 package com.mtx.disneyworld.util;
 
+import static com.mtx.disneyworld.util.Constants.Roles.ADMIN;
+
 public class Constants {
 
     public static abstract class Roles {
@@ -53,5 +55,10 @@ public class Constants {
         public static final String ASC_DESC = ASC + "|" + DESC;
         public static final String DESC_ASC = DESC + "|" + ASC;
         public static final String DETAILS = "details";
+    }
+    
+    public static abstract class DefaultData {
+        public static final String ADMIN_EMAIL = "admin@disneyworld.com";
+        public static final String USER_EMAIL = "user@disneyworld.com";
     }
 }
